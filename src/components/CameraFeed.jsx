@@ -1,4 +1,5 @@
 import React from "react";
+import { FiAlertTriangle } from "../icons";
 
 export default function CameraFeed({
   connected = true,
@@ -186,7 +187,7 @@ export default function CameraFeed({
           color: "#5A647A",
           zIndex: 10,
         }}>
-          <div style={{ fontSize: "2.5rem", marginBottom: 8 }}>⚠️</div>
+          <div style={{ fontSize: "2.5rem", marginBottom: 8 }}><FiAlertTriangle /></div>
           <h4 style={{ color: "#E8ECF4", fontFamily: "'Syne', sans-serif", fontWeight: 700 }}>NO SIGNAL</h4>
           <p style={{ fontSize: "0.8rem", color: "#8892A4", marginTop: 4 }}>Stream offline. Robot is currently in standby mode.</p>
         </div>

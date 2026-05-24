@@ -1,6 +1,8 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import ModeCard from "../components/ModeCard";
+import { FiMic, FiCamera, FiMoon } from "../icons";
+import { FaRobot } from "../icons";
 
 export default function Modes({
   dark,
@@ -106,13 +108,13 @@ export default function Modes({
           <ModeCard
             title="Voice Mode"
             description="Activate Zippy's intelligent voice control system. Interact with children, listen for vocal alerts, and execute natural speech commands."
-            icon="🎤"
+            icon={<FiMic size={26} />}
             active={connected && currentMode.includes("Voice")}
             accentColor="#FF6B6B"
             border={border}
             sub={sub}
             text={text}
-            onOpen={() => handleOpenMode("Voice Mode", "🎤 Voice Mode Active", "VoiceMode")}
+            onOpen={() => handleOpenMode("Voice Mode", "Voice Mode Active", "VoiceMode")}
             openLabel="Open Voice Mode"
           />
 
@@ -120,13 +122,13 @@ export default function Modes({
           <ModeCard
             title="Follow Mode"
             description="Engage Zippy's BLE child tracking algorithms. The robot uses rssi beacon proximity sensors to follow children automatically at a safe distance."
-            icon="🤖"
+            icon={<FaRobot size={26} />}
             active={connected && currentMode.includes("Follow")}
             accentColor="#A78BFA"
             border={border}
             sub={sub}
             text={text}
-            onOpen={() => handleOpenMode("Follow Mode", "🤖 Follow Mode Active", "FollowMode")}
+            onOpen={() => handleOpenMode("Follow Mode", "Follow Mode Active", "FollowMode")}
             openLabel="Open Follow Mode"
           />
 
@@ -134,13 +136,13 @@ export default function Modes({
           <ModeCard
             title="Monitor Mode"
             description="Switch to camera monitoring. View low-latency streams, record clips, and activate real-time object detection overlays."
-            icon="📷"
+            icon={<FiCamera size={26} />}
             active={connected && currentMode.includes("Monitor")}
             accentColor="#4ECDC4"
             border={border}
             sub={sub}
             text={text}
-            onOpen={() => handleOpenMode("Monitor Mode", "📷 Monitor Mode Active", "LiveMonitor")}
+            onOpen={() => handleOpenMode("Monitor Mode", "Monitor Mode Active", "LiveMonitor")}
             openLabel="Open Monitor Mode"
           />
 
@@ -148,13 +150,13 @@ export default function Modes({
           <ModeCard
             title="Sleep Mode"
             description="Put the robot in standby sleep mode. Stops stream telemetry, silences audio feedback, and reduces power consumption to conserve battery life."
-            icon="😴"
+            icon={<FiMoon size={26} />}
             active={connected && currentMode.includes("Sleep")}
             accentColor="#5A647A"
             border={border}
             sub={sub}
             text={text}
-            onOpen={() => handleOpenMode("Sleep Mode", "😴 Sleep Mode Active", null)}
+            onOpen={() => handleOpenMode("Sleep Mode", "Sleep Mode Active", null)}
             openLabel={connected && currentMode.includes("Sleep") ? "Active" : "Activate Sleep"}
           />
         </div>

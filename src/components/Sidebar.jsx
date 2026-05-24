@@ -1,13 +1,24 @@
 import React from "react";
+import {
+  FiHome,
+  FiBarChart2,
+  FiGrid,
+  FiMic,
+  FiVideo,
+  FiSettings,
+  FiSun,
+  FiMoon,
+} from "../icons";
+import { FaRobot } from "../icons";
 
 const NAV_ITEMS = [
-  { id: "Home", label: "Back to Home", icon: "🏠" },
-  { id: "Dashboard", label: "Dashboard", icon: "📊" },
-  { id: "Modes", label: "Modes Hub", icon: "🎮" },
-  { id: "VoiceMode", label: "Voice Mode", icon: "🎤" },
-  { id: "FollowMode", label: "Follow Mode", icon: "🤖" },
-  { id: "LiveMonitor", label: "Live Monitor", icon: "🎥" },
-  { id: "Settings", label: "Settings", icon: "⚙️" },
+  { id: "Home", label: "Back to Home", icon: <FiHome size={18} /> },
+  { id: "Dashboard", label: "Dashboard", icon: <FiBarChart2 size={18} /> },
+  { id: "Modes", label: "Modes Hub", icon: <FiGrid size={18} /> },
+  { id: "VoiceMode", label: "Voice Mode", icon: <FiMic size={18} /> },
+  { id: "FollowMode", label: "Follow Mode", icon: <FaRobot size={18} /> },
+  { id: "LiveMonitor", label: "Live Monitor", icon: <FiVideo size={18} /> },
+  { id: "Settings", label: "Settings", icon: <FiSettings size={18} /> },
 ];
 
 export default function Sidebar({
@@ -63,7 +74,7 @@ export default function Sidebar({
           justifyContent: "center",
           fontSize: "1.2rem",
           boxShadow: `0 4px 12px ${accent}22`,
-        }}>🤖</div>
+        }}><FaRobot size={20} /></div>
         <div>
           <h2 style={{
             fontFamily: "'Syne', sans-serif",
@@ -205,7 +216,7 @@ export default function Sidebar({
           borderRadius: "6px",
           border: `1px solid ${border}`,
         }}>
-          <span>🎤</span>
+          <FiMic size={14} />
           <span style={{ fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
             {connected ? currentMode : "Standby Mode"}
           </span>
@@ -248,7 +259,6 @@ export default function Sidebar({
             border: `1px solid ${border}`,
             background: "transparent",
             color: text,
-            fontSize: "0.9rem",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
@@ -257,7 +267,7 @@ export default function Sidebar({
           }}
           aria-label="Toggle Theme"
         >
-          {dark ? "☀️" : "🌙"}
+          {dark ? <FiSun size={16} /> : <FiMoon size={16} />}
         </button>
       </div>
     </aside>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import StatusCard from "../components/StatusCard";
+import { FiVideo, FiWifi, FiAlertTriangle, FiShield } from "../icons";
+import { GiBrain, GiJoystick } from "../icons";
 import CameraFeed from "../components/CameraFeed";
 
 export default function LiveMonitor({
@@ -169,7 +171,7 @@ export default function LiveMonitor({
         }}>
           {/* Column 1: Video Surveillance */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-            <StatusCard title="Full Camera Stream" icon="🎥" dark={dark}>
+            <StatusCard title="Full Camera Stream" icon={<FiVideo size={18} />} dark={dark}>
               <div style={{ position: "relative" }}>
                 <CameraFeed
                   connected={connected && isStreaming}
@@ -209,7 +211,7 @@ export default function LiveMonitor({
             </StatusCard>
 
             {/* Video Controls Panel */}
-            <StatusCard title="Camera Controls" icon="🎮" dark={dark}>
+            <StatusCard title="Camera Controls" icon={<GiJoystick size={18} />} dark={dark}>
               <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
@@ -282,7 +284,7 @@ export default function LiveMonitor({
           {/* Column 2: Parameters & Telemetry */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             {/* Stream Telemetry */}
-            <StatusCard title="Stream Status" icon="📶" dark={dark}>
+            <StatusCard title="Stream Status" icon={<FiWifi size={18} />} dark={dark}>
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <span style={{ fontSize: "0.88rem", color: sub }}>Frames Per Second</span>
@@ -323,7 +325,7 @@ export default function LiveMonitor({
             </StatusCard>
 
             {/* Object Detection */}
-            <StatusCard title="Object Detection" icon="🧠" dark={dark}>
+            <StatusCard title="Object Detection" icon={<GiBrain size={18} />} dark={dark}>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <span style={{ fontSize: "0.82rem", color: sub }}>Simulated AI Target Class:</span>
                 <select
@@ -364,7 +366,7 @@ export default function LiveMonitor({
             </StatusCard>
 
             {/* Alerts */}
-            <StatusCard title="Alerts" icon="⚠️" dark={dark}>
+            <StatusCard title="Alerts" icon={<FiAlertTriangle size={18} />} dark={dark}>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {battery < 25 && (
                   <div style={{
@@ -376,7 +378,7 @@ export default function LiveMonitor({
                     color: "#FF6B6B",
                     fontWeight: 600,
                   }}>
-                    ⚠️ Battery Low: {battery}% remaining.
+                    Battery Low: {battery}% remaining.
                   </div>
                 )}
                 {connected && isStreaming && (
@@ -389,7 +391,7 @@ export default function LiveMonitor({
                     color: "#4ECDC4",
                     fontWeight: 600,
                   }}>
-                    🛡️ Camera Active: Secure stream encrypted.
+                    Camera Active: Secure stream encrypted.
                   </div>
                 )}
                 {!connected && (

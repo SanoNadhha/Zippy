@@ -14,7 +14,7 @@ export default function App() {
   // Unified Robot States
   const [connected, setConnected] = useState(true);
   const [battery, setBattery] = useState(80);
-  const [currentMode, setCurrentMode] = useState("🎤 Voice Mode Active");
+  const [currentMode, setCurrentMode] = useState("Voice Mode Active");
   const [logs, setLogs] = useState([
     { text: "Camera Connected", time: "Just now", type: "success" },
     { text: "Robot Started", time: "2 mins ago", type: "info" },

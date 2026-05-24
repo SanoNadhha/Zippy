@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import StatusCard from "../components/StatusCard";
+import { FiMic, FiMessageSquare, FiChevronUp, FiChevronLeft, FiSquare, FiChevronRight } from "../icons";
+import { GiJoystick } from "../icons";
 
 export default function VoiceMode({
   dark,
@@ -156,7 +158,7 @@ export default function VoiceMode({
           gap: "1.5rem",
         }}>
           {/* Voice Command Button Card */}
-          <StatusCard title="Voice Assistant Triggers" icon="🎙️" dark={dark}>
+          <StatusCard title="Voice Assistant Triggers" icon={<FiMic size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -195,7 +197,7 @@ export default function VoiceMode({
                     animation: "pulseRed 1.5s infinite",
                   }} />
                 )}
-                🎙️
+                <FiMic size={28} />
               </button>
 
               <h4 style={{ margin: 0, fontWeight: 700 }}>
@@ -208,7 +210,7 @@ export default function VoiceMode({
           </StatusCard>
 
           {/* Speech Command State */}
-          <StatusCard title="Command Status" icon="💬" dark={dark}>
+          <StatusCard title="Command Status" icon={<FiMessageSquare size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -258,7 +260,7 @@ export default function VoiceMode({
           </StatusCard>
 
           {/* Manual Control Overrides */}
-          <StatusCard title="Command Shortcuts" icon="🕹️" dark={dark}>
+          <StatusCard title="Command Shortcuts" icon={<GiJoystick size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -294,7 +296,7 @@ export default function VoiceMode({
                   }}
                   title="Forward"
                 >
-                  ▲
+                  <FiChevronUp size={18} />
                 </button>
                 <div />
 
@@ -312,7 +314,7 @@ export default function VoiceMode({
                   }}
                   title="Left"
                 >
-                  ◀
+                  <FiChevronLeft size={18} />
                 </button>
                 <button
                   onClick={() => handleCommand("Stop", "Stopping operations")}
@@ -328,7 +330,7 @@ export default function VoiceMode({
                   }}
                   title="Stop"
                 >
-                  ■
+                  <FiSquare size={18} />
                 </button>
                 <button
                   onClick={() => handleCommand("Turn Right", "Turning Right")}
@@ -344,7 +346,7 @@ export default function VoiceMode({
                   }}
                   title="Right"
                 >
-                  ▶
+                  <FiChevronRight size={18} />
                 </button>
               </div>
             </div>

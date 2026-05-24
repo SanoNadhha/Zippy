@@ -1,50 +1,38 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
+import {
+  FiMic,
+  FiVideo,
+  FiLayers,
+  FiStar,
+  FiLock,
+  FiShield,
+} from "../icons";
 
 const FEATURES = [
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="26" height="26">
-        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-        <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
-      </svg>
-    ),
+    icon: <FiMic size={26} />,
     title: "Voice Commands",
     desc: "Natural language processing for seamless child interaction and emergency vocal triggers.",
     color: "#FF6B6B",
     bg: "rgba(255,107,107,0.1)",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="26" height="26">
-        <rect x="2" y="7" width="20" height="15" rx="2"/>
-        <polyline points="17 2 12 7 7 2"/>
-        <circle cx="12" cy="14" r="3"/>
-      </svg>
-    ),
+    icon: <FiVideo size={26} />,
     title: "Live Monitoring",
     desc: "Crystal clear 4K encrypted streaming to your dashboard with ultra-low latency connection.",
     color: "#4ECDC4",
     bg: "rgba(78,205,196,0.1)",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="26" height="26">
-        <circle cx="12" cy="5" r="3"/>
-        <path d="M12 8v8M9 11l3-3 3 3M9 19l3 3 3-3"/>
-      </svg>
-    ),
+    icon: <FiLayers size={26} />,
     title: "Child Following",
     desc: "Advanced computer vision allows Zippy to follow and engage children within a safe perimeter.",
     color: "#A78BFA",
     bg: "rgba(167,139,250,0.1)",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="26" height="26">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-      </svg>
-    ),
+    icon: <FiStar size={26} />,
     title: "Interactive Modes",
     desc: "Switch between play, education, and safety guard modes with a single click from your app.",
     color: "#F59E0B",
@@ -53,9 +41,9 @@ const FEATURES = [
 ];
 
 const BADGES = [
-  { icon: "🔒", label: "Secure Data" },
-  { icon: "✦", label: "AI Powered" },
-  { icon: "🛡", label: "Safe Design" },
+  { icon: <FiLock size={14} />, label: "Secure Data" },
+  { icon: <FiStar size={14} />, label: "AI Powered" },
+  { icon: <FiShield size={14} />, label: "Safe Design" },
 ];
 
 export default function ZippyRobotHome({ dark, setDark, active, setActive }) {

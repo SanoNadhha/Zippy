@@ -2,6 +2,8 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import StatusCard from "../components/StatusCard";
 import CameraFeed from "../components/CameraFeed";
+import { FaRobot } from "../icons";
+import { FiVideo, FiSettings, FiZap, FiBell, FiMic } from "../icons";
 
 export default function Dashboard({
   dark,
@@ -120,7 +122,7 @@ export default function Dashboard({
           gap: "1.50rem",
         }}>
           {/* Robot Status Card */}
-          <StatusCard title="Robot Status" icon="🤖" dark={dark}>
+          <StatusCard title="Robot Status" icon={<FaRobot size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -143,7 +145,7 @@ export default function Dashboard({
                   fontWeight: 700,
                   color: connected ? "#4ECDC4" : "#FF6B6B",
                 }}>
-                  {connected ? "🟢 Connected" : "🔴 Offline"}
+                  {connected ? "Connected" : "Offline"}
                 </span>
               </div>
 
@@ -176,7 +178,7 @@ export default function Dashboard({
           </StatusCard>
 
           {/* Camera Preview Card */}
-          <StatusCard title="Camera Preview" icon="🎥" dark={dark}>
+          <StatusCard title="Camera Preview" icon={<FiVideo size={18} />} dark={dark}>
             <div style={{ marginBottom: 12 }}>
               <CameraFeed
                 connected={connected}
@@ -195,7 +197,7 @@ export default function Dashboard({
           </StatusCard>
 
           {/* Current Mode Card */}
-          <StatusCard title="Current Mode" icon="⚙️" dark={dark}>
+          <StatusCard title="Current Mode" icon={<FiSettings size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -210,7 +212,7 @@ export default function Dashboard({
                 padding: "20px 16px",
                 textAlign: "center",
               }}>
-                <div style={{ fontSize: "2rem", marginBottom: 8 }}>🎤</div>
+                <div style={{ fontSize: "2rem", marginBottom: 8 }}><FiMic /></div>
                 <div style={{
                   fontSize: "1.1rem",
                   fontWeight: 700,
@@ -224,7 +226,7 @@ export default function Dashboard({
           </StatusCard>
 
           {/* Quick Buttons Card */}
-          <StatusCard title="Quick Buttons" icon="⚡" dark={dark}>
+          <StatusCard title="Quick Buttons" icon={<FiZap size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -287,7 +289,7 @@ export default function Dashboard({
           </StatusCard>
 
           {/* Notifications / Logs Card */}
-          <StatusCard title="Notifications" icon="🔔" dark={dark}>
+          <StatusCard title="Notifications" icon={<FiBell size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",

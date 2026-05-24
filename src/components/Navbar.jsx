@@ -1,4 +1,6 @@
 import React from "react";
+import { FiSun, FiMoon } from "../icons";
+import { FaRobot } from "../icons";
 
 const NAV_LINKS = ["Home", "Dashboard", "Modes", "Monitor", "Settings"];
 
@@ -24,7 +26,7 @@ export default function Navbar({ dark, setDark, active, setActive }) {
           background: "linear-gradient(135deg, #4B9EFF, #A78BFA)",
           display: "flex", alignItems: "center", justifyContent: "center",
           fontSize: "1rem",
-        }}>🤖</div>
+        }}><FaRobot size={18} /></div>
         <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.05rem", letterSpacing: "-0.01em" }}>
           Zippy Robot
         </span>
@@ -67,12 +69,11 @@ export default function Navbar({ dark, setDark, active, setActive }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "0.9rem",
           }}
           onClick={() => setDark(d => !d)}
           aria-label="Toggle Theme"
         >
-          {dark ? "☀️" : "🌙"}
+          {dark ? <FiSun size={16} /> : <FiMoon size={16} />}
         </button>
       </div>
     </nav>

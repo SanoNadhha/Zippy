@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import StatusCard from "../components/StatusCard";
+import { FiSettings, FiInfo, FiMoon, FiSun } from "../icons";
 
 export default function Settings({
   dark,
@@ -83,7 +84,7 @@ export default function Settings({
           gap: "1.50rem",
         }}>
           {/* Theme Toggle Card */}
-          <StatusCard title="Theme Toggle" icon="⚙️" dark={dark}>
+          <StatusCard title="Theme Toggle" icon={<FiSettings size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -114,12 +115,12 @@ export default function Settings({
               >
                 {dark ? (
                   <>
-                    <span>🌙</span>
+                    <FiMoon size={18} />
                     Dark Mode Active
                   </>
                 ) : (
                   <>
-                    <span>☀️</span>
+                    <FiSun size={18} />
                     Light Mode Active
                   </>
                 )}
@@ -128,7 +129,7 @@ export default function Settings({
           </StatusCard>
 
           {/* App Info Card */}
-          <StatusCard title="App Info" icon="ℹ️" dark={dark}>
+          <StatusCard title="App Info" icon={<FiInfo size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",

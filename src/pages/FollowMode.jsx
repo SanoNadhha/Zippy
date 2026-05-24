@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import StatusCard from "../components/StatusCard";
+import { FaRobot } from "../icons";
+import { FiSliders, FiSettings, FaRuler } from "../icons";
 
 export default function FollowMode({
   dark,
@@ -132,7 +134,7 @@ export default function FollowMode({
           gap: "1.50rem",
         }}>
           {/* Status Display Card */}
-          <StatusCard title="Follow Status" icon="🤖" dark={dark}>
+          <StatusCard title="Follow Status" icon={<FaRobot size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -197,7 +199,7 @@ export default function FollowMode({
           </StatusCard>
 
           {/* Distance Indicator Card */}
-          <StatusCard title="Distance Indicator" icon="📏" dark={dark}>
+          <StatusCard title="Distance Indicator" icon={<FaRuler size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
@@ -240,7 +242,7 @@ export default function FollowMode({
           </StatusCard>
 
           {/* Follow Controls Card */}
-          <StatusCard title="Follow Controls" icon="⚙️" dark={dark}>
+          <StatusCard title="Follow Controls" icon={<FiSettings size={18} />} dark={dark}>
             <div style={{
               display: "flex",
               flexDirection: "column",
